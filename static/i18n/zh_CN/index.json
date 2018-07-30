@@ -1,0 +1,22 @@
+{
+  "visitor.visitor.public.operate.success": "操作成功",
+  "visitor.visitor.public.operate.fail": "操作失败",
+  "visitor.visitor.public.token.check.fail": "token验证失败",
+  "visitor.visitor.order.status.change":
+    "访客单状态发生改变，请重新获取访客单信息",
+  "visitor.visitor.import.validate.unknow.error": "校验未知错误",
+  "el": {
+    "colorpicker": { "confirm": "确定", "clear": "清空" },
+    "datepicker": {
+      "now": "此刻",
+      "today": "今天"
+    },
+    "tree": { "emptyText": "暂无数据" },
+    "transfer": {
+      "titles": ["列表 1", "列表 2"],
+      "filterPlaceholder": "请输入搜索内容",
+      "noCheckedFormat": "共 {total} 项",
+      "hasCheckedFormat": "已选 {checked}/{total} 项"
+    }
+  }
+}
