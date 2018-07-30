@@ -1,1 +1,128 @@
-{}
+{
+  "visitor.visitor.public.operate.success": "Operation is successful",
+  "visitor.visitor.public.operate.fail": "The operation failure",
+  "visitor.visitor.public.token.check.fail": "Token authentication failed",
+  "visitor.visitor.order.status.change":
+    "The status of the visitor list has changed, please get the visitor list information again",
+  "visitor.visitor.import.validate.unknow.error": "Check for unknown error",
+  "el": {
+    "colorpicker": { "confirm": "determine", "clear": "empty" },
+    "datepicker": {
+      "now": "At the moment",
+      "today": "Today,",
+      "months": {
+        "jan": "In January,",
+        "feb": "In February,",
+        "mar": "In march,",
+        "apr": "April",
+        "may": "In may",
+        "jun": "In June",
+        "jul": "The month of July",
+        "aug": "In August,",
+        "sep": "September",
+        "oct": "October",
+        "nov": "In November,",
+        "dec": "December"
+      }
+    },
+    "select": {
+      "loading": "In the load",
+      "noMatch": "Unmatched data",
+      "noData": "No data",
+      "placeholder": "Please select a"
+    },
+    "cascader": {
+      "noMatch": "Unmatched data",
+      "loading": "In the load",
+      "placeholder": "Please select a"
+    },
+    "pagination": {
+      "goto": "To travel to",
+      "pagesize": "Article/pp.",
+      "total": "Total {total} article",
+      "pageClassifier": "page",
+      "gotoBtn": "jump"
+    },
+    "messagebox": {
+      "title": "prompt",
+      "confirm": "determine",
+      "cancel": "cancel",
+      "error": "Input data is illegal!"
+    },
+    "upload": {
+      "delete": "delete",
+      "preview": "Review images",
+      "continue": "Continue to upload"
+    },
+    "table": {
+      "emptyText": "Temporarily no data",
+      "confirmFilter": "screening",
+      "resetFilter": "reset",
+      "clearFilter": "all",
+      "sumText": "A combined"
+    },
+    "tree": { "emptyText": "Temporarily no data" },
+    "transfer": {
+      "noMatch": "Unmatched data",
+      "noData": "No data",
+      "titles": ["Listing 1", "List 2"],
+      "filterPlaceholder": "Please enter the search content",
+      "noCheckedFormat": "A total of item {total}",
+      "hasCheckedFormat": "The selected item / {total} {checked}"
+    }
+  },
+  "eid": {
+    "plan": { "del": "delete", "save": "save" },
+    "errorPage": {
+      "sorry": "I'm sorry that the page you visited does not exist",
+      "goPrev": "Go back to the previous page",
+      "goHome": "Return to the home page"
+    },
+    "guide": { "close": "Shut down" },
+    "tableTransfer": {
+      "leftTableTitle": "To add",
+      "tableInputPh": "Search...",
+      "leftTableLoadingText": "Loading data...",
+      "leftTableEmptyText": "Temporarily no data",
+      "rightTableTitle": "Have been added",
+      "rightTableEmptyText": "Select the data you want to add"
+    },
+    "upload": { "text": "upload" }
+  },
+  "visitor": {
+    "setting": {
+      "sceneConfig": "Visiting Settings",
+      "sceneConfigTip":
+        "Through the visit setting, you can choose different ways to make an appointment and register visitors' visit according to the requirements of the scene.",
+      "identityNum": "I.d.",
+      "required": "mandatory",
+      "defaultDepartTime": "Visitors leave by default",
+      "noMinRegTip": "Please enter the registration time in advance",
+      "minRegTip": "Please enter the correct pre-registration time",
+      "timeRegTip":
+        "Please enter the correct default departure time for visitors",
+      "imageLocation": "Image storage location",
+      "imageLocationTip":
+        "The storage location of captured images in the process of registration of visitors' avatars and testimonials.",
+      "auth": "Visitor permissions",
+      "authDevice": "Access permissions",
+      "messageTip":
+        "Arrival notification refers to the message notification sent by the system to the target after the visitor enters the park or registers successfully.",
+      "messageInfo":
+        "After modifying the SMS template, it needs to submit it to the third-party SMS sending platform for review.",
+      "savedTip":
+        "Save successfully! If there is any modification, please submit it to the third-party messaging platform for review.",
+      "messageRuleTip": "1 to 180 characters"
+    }
+  },
+  "common": {
+    "save": "save",
+    "add": "add",
+    "del": "delete",
+    "nodeLimitAlert":
+      "The current view data volume is large, and the fluency will be reduced. It is recommended to use search.",
+    "searchInputText": "search",
+    "searchLimitAlert":
+      "There are too many search results, only the first 500 are displayed, it is recommended to narrow the search scope."
+  }
+}

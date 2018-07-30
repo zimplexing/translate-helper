@@ -12,15 +12,16 @@ const pathExists = fs.pathExists(jsonPath);
 //   }
 // };
 
-pathExists.then((isExist) => {
+pathExists.then(isExist => {
   if (isExist) {
     fs.readJson(jsonPath, {
       encoding: 'utf-8',
-    }, (err, doc) => {
+    }, async (err, doc) => {
       if (err) {
         return false;
       }
-      const translatedObj = translateText(doc, Object.keys(languageCodeMap));
+      const translatedObj = await translateText(doc);
+      console.info('翻译完成');
       fs.removeSync(path.resolve(process.cwd(), './static/i18n/en_US'));
       fs.mkdirpSync(path.resolve(process.cwd(), './static/i18n/en_US'));
       fs.writeJsonSync(path.resolve(process.cwd(), './static/i18n/en_US/index.json'), translatedObj, {
