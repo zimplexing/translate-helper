@@ -6,13 +6,13 @@ type TranslateText = (text: string) => any;
 type Translate<T> = (obj: T) => T;
 
 const defaultLanguage: string = 'zh_CN';
-const targetLanguage: string = 'en_US';
+// const targetLanguage: string = 'en_US';
 
 const translateText:TranslateText = async (text) => {
   const {data: translateResult} = await translateApi(
     text,
     defaultLanguage,
-    languageCodeMap[targetLanguage],
+    'ko',
   );
   console.info(`「${text}」翻译为：「${translateResult.translation[0]}」`);
   return translateResult.translation[0]
