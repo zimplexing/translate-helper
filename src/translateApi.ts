@@ -3,8 +3,8 @@ import * as md5 from 'blueimp-md5';
 
 const API_HTTP = 'http://openapi.youdao.com/api';
 const salt: number =  new Date().getTime();
-let APP_KEY = '45a5a6ac2ea7a23f';
-let APP_SECRET = '6UFV9VUykh8FVq2KQVnkBxEePh9nVdOQ';
+let APP_KEY = '';
+let APP_SECRET = '';
 
 interface IResponse {
   errorCode: string;
