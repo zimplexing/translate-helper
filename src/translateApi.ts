@@ -1,10 +1,10 @@
 import axios, { AxiosPromise } from 'axios';
-import md5 from 'blueimp-md5';
+import * as md5 from 'blueimp-md5';
 
 const API_HTTP = 'http://openapi.youdao.com/api';
-const APP_ID = '45a5a6ac2ea7a23f';
-const APP_SECRET_KEY = '6UFV9VUykh8FVq2KQVnkBxEePh9nVdOQ';
 const salt: number =  new Date().getTime();
+let APP_KEY = '45a5a6ac2ea7a23f';
+let APP_SECRET = '6UFV9VUykh8FVq2KQVnkBxEePh9nVdOQ';
 
 interface IResponse {
   errorCode: string;
@@ -20,25 +20,28 @@ interface IResponse {
 }
 
 type TranslateApi = (q: string, from: string, to: string) =>  AxiosPromise<IResponse>;
+type SetKeyAndSecret = (appkey: string, appSecret: string) => void;
 
 const translateApi: TranslateApi = (q: string, from: string, to: string) => {
   return axios.get(API_HTTP, {
     params: {
-      appKey: APP_ID,
+      appKey: APP_KEY,
       from,
       q,
       salt,
-      sign: md5(APP_ID + q + salt + APP_SECRET_KEY),
+      sign: md5(APP_KEY + q + salt + APP_SECRET),
       to,
     },
   });
 };
 
-// example:
-// translateApi('好', 'zh-CHS', 'EN').then((result) => {
-//   console.log(result);
-// }).catch((err) => {
-//   console.log(err);
-// });
+const setKeyAndSecret: SetKeyAndSecret = (k: string, s: string) => {
+  APP_KEY = k;
+  APP_SECRET = s;
+};
+
+export {
+  setKeyAndSecret,
+};
 
 export default translateApi;

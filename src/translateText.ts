@@ -1,33 +1,32 @@
+import { AxiosPromise } from 'axios';
 import languageCodeMap from './languageCodeMap';
 import translateApi from './translateApi';
-import { AxiosPromise } from 'axios';
 
-type TranslateText = (text: string) => any;
-type Translate<T> = (obj: T) => T;
+type TranslateText = (text: string, language: string) => any;
+type Translate<T> = (obj: T, language: string) => T;
 
 const defaultLanguage: string = 'zh_CN';
-// const targetLanguage: string = 'en_US';
 
-const translateText:TranslateText = async (text) => {
+const translateText: TranslateText = async (text, language) => {
   const {data: translateResult} = await translateApi(
     text,
     defaultLanguage,
-    'ko',
+    language,
   );
   console.info(`「${text}」翻译为：「${translateResult.translation[0]}」`);
-  return translateResult.translation[0]
-}
+  return translateResult.translation[0];
+};
 
-const translate: Translate<object> = async (obj) => {
-  let objArr = Array.isArray(obj) ? [] : {}
+const translate: Translate<object> = async (obj, language) => {
+  const objArr = Array.isArray(obj) ? [] : {};
   for (const key of Object.keys(obj)) {
     if (typeof obj[key] === 'object') {
-      objArr[key] = await translate(obj[key])
+      objArr[key] = await translate(obj[key], language);
     } else {
-      objArr[key] = await translateText(obj[key])
+      objArr[key] = await translateText(obj[key], language);
     }
   }
-  return objArr
-}
+  return objArr;
+};
 
 export default translate;

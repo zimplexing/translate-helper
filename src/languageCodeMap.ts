@@ -9,5 +9,10 @@
 // 越南文	vi
 export default {
   en_US: 'EN',
-  zh_CN: 'zh-CHS',
+  es: 'es',
+  fr: 'fr',
+  ja: 'ja',
+  ko: 'ko',
+  pt: 'pt',
+  ru: 'ru',
 };

@@ -1,0 +1,19 @@
+#!/usr/bin/env node
+
+const program = require('commander')
+const {run} = require('../lib/index.js')
+const {setKeyAndSecret} = require('../lib/src/translateApi')
+
+program
+  .version(require('../package').version)
+  .option('-k --appKey [value]', '应用id，可以在有道应用管理中查看')
+  .option('-s --appSecret [value]', '应用密钥，可以在有道应用管理中查看')
+  .option('-l --language [value]', '翻译语言')
+  .option('-p --publicDir [value]', '静态资源的目录')
+  .parse(process.argv)
+
+if (program.appKey && program.appSecret) {
+  setKeyAndSecret(program.appKey, program.appSecret)
+}
+
+run(program.language, program.publicDir)

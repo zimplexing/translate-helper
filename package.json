@@ -6,6 +6,9 @@
   "scripts": {
     "build": "tsc"
   },
+  "bin": {
+    "translate": "./bin/translate"
+  },
   "keywords": [
     "i18n",
     "translate"
@@ -15,6 +18,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "blueimp-md5": "^2.10.0",
+    "commander": "^2.16.0",
     "fs-extra": "^7.0.0"
   },
   "devDependencies": {
